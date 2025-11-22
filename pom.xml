@@ -20,7 +20,31 @@
 		<sonar.organization>keldenpdorji-1</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 		<sonar.coverage.jacoco.xmlReportPaths>target/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+		<maven.wagon.http.retryHandler.count>5</maven.wagon.http.retryHandler.count>
+		<maven.wagon.http.connectTimeout>30000</maven.wagon.http.connectTimeout>
+		<maven.wagon.http.readTimeout>30000</maven.wagon.http.readTimeout>
 	</properties>
+
+	<repositories>
+		<repository>
+			<id>central</id>
+			<name>Central Repository</name>
+			<url>https://repo.maven.apache.org/maven2</url>
+			<layout>default</layout>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>aliyun</id>
+			<name>Aliyun Maven Repository</name>
+			<url>https://maven.aliyun.com/repository/public</url>
+			<layout>default</layout>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
