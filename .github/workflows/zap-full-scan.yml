@@ -51,9 +51,8 @@ jobs:
         with:
           target: "http://localhost:5000"
           rules_file_name: ".zap/rules.tsv"
-          cmd_options: "-a -j -w report.md"
+          cmd_options: "-a -j"
           fail_action: false
-          output_format: "md"
 
       - name: Upload ZAP Full Report
         uses: actions/upload-artifact@v4
@@ -61,9 +60,9 @@ jobs:
         with:
           name: zap-full-report
           path: |
-            report.md
-            report.json
-            report.html
+            report_html.html
+            report_json.json
+            report_md.md
           retention-days: 90
           if-no-files-found: warn
 

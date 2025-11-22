@@ -1,5 +1,5 @@
-# Use Eclipse Temurin 17 as base image
-FROM eclipse-temurin:17-jdk-slim
+# Use official OpenJDK 17 slim image from docker hub
+FROM openjdk:17-jdk-slim-bullseye
 
 # Set working directory
 WORKDIR /app
