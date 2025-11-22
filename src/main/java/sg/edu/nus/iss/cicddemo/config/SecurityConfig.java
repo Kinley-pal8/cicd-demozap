@@ -32,7 +32,7 @@ public class SecurityConfig {
                 .frameOptions(frameOptions -> frameOptions.deny())
                 
                 // X-Content-Type-Options: nosniff - Prevents MIME sniffing
-                .contentTypeOptions(contentTypeOptions -> contentTypeOptions.noSniff())
+                .contentTypeOptions()
                 
                 // Strict-Transport-Security (HSTS) - Force HTTPS
                 .httpStrictTransportSecurity(hsts -> hsts
@@ -40,10 +40,8 @@ public class SecurityConfig {
                     .includeSubDomains(true)
                 )
                 
-                // X-XSS-Protection: 1; mode=block
-                .xssProtection(xss -> xss
-                    .block(true)
-                )
+                // X-XSS-Protection
+                .xssProtection()
                 
                 // Additional custom headers
                 .addHeaderWriter(new StaticHeadersWriter("Content-Security-Policy",
